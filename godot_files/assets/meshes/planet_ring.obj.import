@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/planet_ring.obj-3ea0df11146b093b2abd08c6b0435e4d.mesh"
+
+[deps]
+
+files=[ "res://.import/planet_ring.obj-3ea0df11146b093b2abd08c6b0435e4d.mesh" ]
+
+source_file="res://assets/meshes/planet_ring.obj"
+dest_files=[ "res://.import/planet_ring.obj-3ea0df11146b093b2abd08c6b0435e4d.mesh", "res://.import/planet_ring.obj-3ea0df11146b093b2abd08c6b0435e4d.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true
