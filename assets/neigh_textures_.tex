@@ -1,0 +1,261 @@
+\documentclass[12pt]{article}
+\usepackage{ifluatex}\ifluatex
+\ifx\pdfpagewidth\undefined\let\pdfpagewidth\paperwidth\fi
+\ifx\pdfpageheight\undefined\let\pdfpageheight\paperheight\fi\else
+\let\paperwidthsave\paperwidth\let\paperwidth\undefined
+\usepackage{graphicx}
+\let\paperwidth\paperwidthsave\fi
+\newbox\ASYbox
+\newdimen\ASYdimen
+\def\ASYprefix{}
+\long\def\ASYbase#1#2{\leavevmode\setbox\ASYbox=\hbox{#1}%\ASYdimen=\ht\ASYbox%
+\setbox\ASYbox=\hbox{#2}\lower\ASYdimen\box\ASYbox}
+\long\def\ASYaligned(#1,#2)(#3,#4)#5#6#7{\leavevmode%
+\setbox\ASYbox=\hbox{#7}%
+\setbox\ASYbox\hbox{\ASYdimen=\ht\ASYbox%
+\advance\ASYdimen by\dp\ASYbox\kern#3\wd\ASYbox\raise#4\ASYdimen\box\ASYbox}%
+\setbox\ASYbox=\hbox{#5\wd\ASYbox 0pt\dp\ASYbox 0pt\ht\ASYbox 0pt\box\ASYbox#6}%
+\hbox to 0pt{\kern#1pt\raise#2pt\box\ASYbox\hss}}%
+\long\def\ASYalignT(#1,#2)(#3,#4)#5#6{%
+\ASYaligned(#1,#2)(#3,#4){%
+\special{ps:gsave currentpoint currentpoint translate [#5 0 0] concat neg exch neg exch translate}%
+}{%
+\special{ps:currentpoint grestore moveto}%
+}{#6}}
+\long\def\ASYalign(#1,#2)(#3,#4)#5{\ASYaligned(#1,#2)(#3,#4){}{}{#5}}
+\def\ASYraw#1{
+currentpoint currentpoint translate matrix currentmatrix
+100 12 div -100 12 div scale
+#1
+setmatrix neg exch neg exch translate}
+\usepackage{graphicx}
+\makeatletter
+\def\Ginclude@eps#1{%
+ \message{<#1>}%
+  \bgroup
+  \def\@tempa{!}%
+  \dimen@\Gin@req@width
+  \dimen@ii.1bp%
+  \divide\dimen@\dimen@ii
+  \@tempdima\Gin@req@height
+  \divide\@tempdima\dimen@ii
+    \special{PSfile=#1\space
+      llx=\Gin@llx\space
+      lly=\Gin@lly\space
+      urx=\Gin@urx\space
+      ury=\Gin@ury\space
+      \ifx\Gin@scalex\@tempa\else rwi=\number\dimen@\space\fi
+      \ifx\Gin@scaley\@tempa\else rhi=\number\@tempdima\space\fi
+      \ifGin@clip clip\fi}%
+  \egroup}
+\makeatother
+\usepackage{color}
+\setlength{\unitlength}{1pt}
+\pagestyle{empty}
+\textheight=260.896605bp
+\textwidth=309.785970bp
+\begin{document}
+\makeatletter%
+\let\ASYencoding\f@encoding%
+\let\ASYfamily\f@family%
+\let\ASYseries\f@series%
+\let\ASYshape\f@shape%
+\makeatother%
+{\catcode`"=12%
+\includegraphics[bb=-118.735970 -237.250000 173.050000 5.646605]{neigh_textures_0.eps}%
+}%
+\kern -292.880168pt%
+\definecolor{ASYcolor}{gray}{0.000000}\color{ASYcolor}
+\fontsize{12.000000}{14.400000}\selectfont
+\usefont{\ASYencoding}{\ASYfamily}{\ASYseries}{\ASYshape}%
+\ASYalign(119.181230,238.139687)(-0.500000,-0.500000){\texttt{61}}%
+\definecolor{ASYcolor}{gray}{0.000000}\color{ASYcolor}
+\fontsize{12.000000}{14.400000}\selectfont
+\ASYalign(143.271230,238.139687)(-0.500000,-0.500000){\texttt{62}}%
+\definecolor{ASYcolor}{gray}{0.000000}\color{ASYcolor}
+\fontsize{12.000000}{14.400000}\selectfont
+\ASYalign(167.361230,238.139687)(-0.500000,-0.500000){\texttt{63}}%
+\definecolor{ASYcolor}{gray}{0.000000}\color{ASYcolor}
+\fontsize{12.000000}{14.400000}\selectfont
+\ASYalign(191.451230,238.139687)(-0.500000,-0.500000){\texttt{64}}%
+\definecolor{ASYcolor}{gray}{0.000000}\color{ASYcolor}
+\fontsize{12.000000}{14.400000}\selectfont
+\ASYalign(215.541230,238.139687)(-0.500000,-0.500000){\texttt{65}}%
+\definecolor{ASYcolor}{gray}{0.000000}\color{ASYcolor}
+\fontsize{12.000000}{14.400000}\selectfont
+\ASYalign(239.631230,238.139687)(-0.500000,-0.500000){\texttt{66}}%
+\definecolor{ASYcolor}{gray}{0.000000}\color{ASYcolor}
+\fontsize{12.000000}{14.400000}\selectfont
+\ASYalign(263.721230,238.139687)(-0.500000,-0.500000){\texttt{67}}%
+\definecolor{ASYcolor}{gray}{0.000000}\color{ASYcolor}
+\fontsize{12.000000}{14.400000}\selectfont
+\ASYalign(119.181230,208.027187)(-0.500000,-0.500000){\texttt{4}}%
+\definecolor{ASYcolor}{gray}{0.000000}\color{ASYcolor}
+\fontsize{12.000000}{14.400000}\selectfont
+\ASYalign(143.271230,208.027187)(-0.500000,-0.500000){\texttt{61}}%
+\definecolor{ASYcolor}{gray}{0.000000}\color{ASYcolor}
+\fontsize{12.000000}{14.400000}\selectfont
+\ASYalign(167.361230,208.027187)(-0.500000,-0.500000){\texttt{62}}%
+\definecolor{ASYcolor}{gray}{0.000000}\color{ASYcolor}
+\fontsize{12.000000}{14.400000}\selectfont
+\ASYalign(191.451230,208.027187)(-0.500000,-0.500000){\texttt{63}}%
+\definecolor{ASYcolor}{gray}{0.000000}\color{ASYcolor}
+\fontsize{12.000000}{14.400000}\selectfont
+\ASYalign(215.541230,208.027187)(-0.500000,-0.500000){\texttt{64}}%
+\definecolor{ASYcolor}{gray}{0.000000}\color{ASYcolor}
+\fontsize{12.000000}{14.400000}\selectfont
+\ASYalign(239.631230,208.027187)(-0.500000,-0.500000){\texttt{65}}%
+\definecolor{ASYcolor}{gray}{0.000000}\color{ASYcolor}
+\fontsize{12.000000}{14.400000}\selectfont
+\ASYalign(263.721230,208.027187)(-0.500000,-0.500000){\texttt{0}}%
+\definecolor{ASYcolor}{gray}{0.000000}\color{ASYcolor}
+\fontsize{12.000000}{14.400000}\selectfont
+\ASYalign(119.181230,177.914687)(-0.500000,-0.500000){\texttt{75}}%
+\definecolor{ASYcolor}{gray}{0.000000}\color{ASYcolor}
+\fontsize{12.000000}{14.400000}\selectfont
+\ASYalign(143.271230,177.914687)(-0.500000,-0.500000){\texttt{557}}%
+\definecolor{ASYcolor}{gray}{0.000000}\color{ASYcolor}
+\fontsize{12.000000}{14.400000}\selectfont
+\ASYalign(167.361230,177.914687)(-0.500000,-0.500000){\texttt{556}}%
+\definecolor{ASYcolor}{gray}{0.000000}\color{ASYcolor}
+\fontsize{12.000000}{14.400000}\selectfont
+\ASYalign(191.451230,177.914687)(-0.500000,-0.500000){\texttt{555}}%
+\definecolor{ASYcolor}{gray}{0.000000}\color{ASYcolor}
+\fontsize{12.000000}{14.400000}\selectfont
+\ASYalign(215.541230,177.914687)(-0.500000,-0.500000){\texttt{554}}%
+\definecolor{ASYcolor}{gray}{0.000000}\color{ASYcolor}
+\fontsize{12.000000}{14.400000}\selectfont
+\ASYalign(239.631230,177.914687)(-0.500000,-0.500000){\texttt{553}}%
+\definecolor{ASYcolor}{gray}{0.000000}\color{ASYcolor}
+\fontsize{12.000000}{14.400000}\selectfont
+\ASYalign(263.721230,177.914687)(-0.500000,-0.500000){\texttt{40}}%
+\definecolor{ASYcolor}{gray}{0.000000}\color{ASYcolor}
+\fontsize{12.000000}{14.400000}\selectfont
+\ASYalign(119.181230,147.802188)(-0.500000,-0.500000){\texttt{557}}%
+\definecolor{ASYcolor}{gray}{0.000000}\color{ASYcolor}
+\fontsize{12.000000}{14.400000}\selectfont
+\ASYalign(143.271230,147.802188)(-0.500000,-0.500000){\texttt{556}}%
+\definecolor{ASYcolor}{gray}{0.000000}\color{ASYcolor}
+\fontsize{12.000000}{14.400000}\selectfont
+\ASYalign(167.361230,147.802188)(-0.500000,-0.500000){\texttt{555}}%
+\definecolor{ASYcolor}{gray}{0.000000}\color{ASYcolor}
+\fontsize{12.000000}{14.400000}\selectfont
+\ASYalign(191.451230,147.802188)(-0.500000,-0.500000){\texttt{554}}%
+\definecolor{ASYcolor}{gray}{0.000000}\color{ASYcolor}
+\fontsize{12.000000}{14.400000}\selectfont
+\ASYalign(215.541230,147.802188)(-0.500000,-0.500000){\texttt{553}}%
+\definecolor{ASYcolor}{gray}{0.000000}\color{ASYcolor}
+\fontsize{12.000000}{14.400000}\selectfont
+\ASYalign(239.631230,147.802188)(-0.500000,-0.500000){\texttt{552}}%
+\definecolor{ASYcolor}{gray}{0.000000}\color{ASYcolor}
+\fontsize{12.000000}{14.400000}\selectfont
+\ASYalign(263.721230,147.802188)(-0.500000,-0.500000){\texttt{552}}%
+\definecolor{ASYcolor}{gray}{0.000000}\color{ASYcolor}
+\fontsize{12.000000}{14.400000}\selectfont
+\ASYalign(119.181230,117.689687)(-0.500000,-0.500000){\texttt{62}}%
+\definecolor{ASYcolor}{gray}{0.000000}\color{ASYcolor}
+\fontsize{12.000000}{14.400000}\selectfont
+\ASYalign(143.271230,117.689687)(-0.500000,-0.500000){\texttt{63}}%
+\definecolor{ASYcolor}{gray}{0.000000}\color{ASYcolor}
+\fontsize{12.000000}{14.400000}\selectfont
+\ASYalign(167.361230,117.689687)(-0.500000,-0.500000){\texttt{64}}%
+\definecolor{ASYcolor}{gray}{0.000000}\color{ASYcolor}
+\fontsize{12.000000}{14.400000}\selectfont
+\ASYalign(191.451230,117.689687)(-0.500000,-0.500000){\texttt{65}}%
+\definecolor{ASYcolor}{gray}{0.000000}\color{ASYcolor}
+\fontsize{12.000000}{14.400000}\selectfont
+\ASYalign(215.541230,117.689687)(-0.500000,-0.500000){\texttt{66}}%
+\definecolor{ASYcolor}{gray}{0.000000}\color{ASYcolor}
+\fontsize{12.000000}{14.400000}\selectfont
+\ASYalign(239.631230,117.689687)(-0.500000,-0.500000){\texttt{67}}%
+\definecolor{ASYcolor}{gray}{0.000000}\color{ASYcolor}
+\fontsize{12.000000}{14.400000}\selectfont
+\ASYalign(263.721230,117.689687)(-0.500000,-0.500000){\texttt{66}}%
+\definecolor{ASYcolor}{gray}{0.000000}\color{ASYcolor}
+\fontsize{12.000000}{14.400000}\selectfont
+\ASYalign(119.181230,87.577187)(-0.500000,-0.500000){\texttt{558}}%
+\definecolor{ASYcolor}{gray}{0.000000}\color{ASYcolor}
+\fontsize{12.000000}{14.400000}\selectfont
+\ASYalign(143.271230,87.577187)(-0.500000,-0.500000){\texttt{559}}%
+\definecolor{ASYcolor}{gray}{0.000000}\color{ASYcolor}
+\fontsize{12.000000}{14.400000}\selectfont
+\ASYalign(167.361230,87.577187)(-0.500000,-0.500000){\texttt{561}}%
+\definecolor{ASYcolor}{gray}{0.000000}\color{ASYcolor}
+\fontsize{12.000000}{14.400000}\selectfont
+\ASYalign(191.451230,87.577187)(-0.500000,-0.500000){\texttt{564}}%
+\definecolor{ASYcolor}{gray}{0.000000}\color{ASYcolor}
+\fontsize{12.000000}{14.400000}\selectfont
+\ASYalign(215.541230,87.577187)(-0.500000,-0.500000){\texttt{568}}%
+\definecolor{ASYcolor}{gray}{0.000000}\color{ASYcolor}
+\fontsize{12.000000}{14.400000}\selectfont
+\ASYalign(239.631230,87.577187)(-0.500000,-0.500000){\texttt{573}}%
+\definecolor{ASYcolor}{gray}{0.000000}\color{ASYcolor}
+\fontsize{12.000000}{14.400000}\selectfont
+\ASYalign(263.721230,87.577187)(-0.500000,-0.500000){\texttt{573}}%
+\definecolor{ASYcolor}{gray}{0.000000}\color{ASYcolor}
+\fontsize{12.000000}{14.400000}\selectfont
+\ASYalign(119.181230,57.464687)(-0.500000,-0.500000){\texttt{74}}%
+\definecolor{ASYcolor}{gray}{0.000000}\color{ASYcolor}
+\fontsize{12.000000}{14.400000}\selectfont
+\ASYalign(143.271230,57.464687)(-0.500000,-0.500000){\texttt{558}}%
+\definecolor{ASYcolor}{gray}{0.000000}\color{ASYcolor}
+\fontsize{12.000000}{14.400000}\selectfont
+\ASYalign(167.361230,57.464687)(-0.500000,-0.500000){\texttt{559}}%
+\definecolor{ASYcolor}{gray}{0.000000}\color{ASYcolor}
+\fontsize{12.000000}{14.400000}\selectfont
+\ASYalign(191.451230,57.464687)(-0.500000,-0.500000){\texttt{561}}%
+\definecolor{ASYcolor}{gray}{0.000000}\color{ASYcolor}
+\fontsize{12.000000}{14.400000}\selectfont
+\ASYalign(215.541230,57.464687)(-0.500000,-0.500000){\texttt{564}}%
+\definecolor{ASYcolor}{gray}{0.000000}\color{ASYcolor}
+\fontsize{12.000000}{14.400000}\selectfont
+\ASYalign(239.631230,57.464687)(-0.500000,-0.500000){\texttt{568}}%
+\definecolor{ASYcolor}{gray}{0.000000}\color{ASYcolor}
+\fontsize{12.000000}{14.400000}\selectfont
+\ASYalign(263.721230,57.464687)(-0.500000,-0.500000){\texttt{53}}%
+\definecolor{ASYcolor}{gray}{0.000000}\color{ASYcolor}
+\fontsize{12.000000}{14.400000}\selectfont
+\ASYalign(119.181230,12.295937)(-0.500000,-0.500000){\texttt{.}}%
+\definecolor{ASYcolor}{gray}{0.000000}\color{ASYcolor}
+\fontsize{12.000000}{14.400000}\selectfont
+\ASYalign(143.271230,12.295937)(-0.500000,-0.500000){\texttt{.}}%
+\definecolor{ASYcolor}{gray}{0.000000}\color{ASYcolor}
+\fontsize{12.000000}{14.400000}\selectfont
+\ASYalign(167.361230,12.295937)(-0.500000,-0.500000){\texttt{.}}%
+\definecolor{ASYcolor}{gray}{0.000000}\color{ASYcolor}
+\fontsize{12.000000}{14.400000}\selectfont
+\ASYalign(191.451230,12.295937)(-0.500000,-0.500000){\texttt{.}}%
+\definecolor{ASYcolor}{gray}{0.000000}\color{ASYcolor}
+\fontsize{12.000000}{14.400000}\selectfont
+\ASYalign(215.541230,12.295937)(-0.500000,-0.500000){\texttt{.}}%
+\definecolor{ASYcolor}{gray}{0.000000}\color{ASYcolor}
+\fontsize{12.000000}{14.400000}\selectfont
+\ASYalign(239.631230,12.295937)(-0.500000,-0.500000){\texttt{.}}%
+\definecolor{ASYcolor}{gray}{0.000000}\color{ASYcolor}
+\fontsize{12.000000}{14.400000}\selectfont
+\ASYalign(263.721230,12.295937)(-0.500000,-0.500000){\texttt{.}}%
+\definecolor{ASYcolor}{gray}{0.000000}\color{ASYcolor}
+\fontsize{12.000000}{14.400000}\selectfont
+\ASYalign(77.940605,238.139687)(-1.000000,-0.500000){vertex index}%
+\definecolor{ASYcolor}{gray}{0.000000}\color{ASYcolor}
+\fontsize{12.000000}{14.400000}\selectfont
+\ASYalign(77.940605,208.027187)(-1.000000,-0.500000){\texttt{n1}}%
+\definecolor{ASYcolor}{gray}{0.000000}\color{ASYcolor}
+\fontsize{12.000000}{14.400000}\selectfont
+\ASYalign(77.940605,177.914687)(-1.000000,-0.500000){\texttt{n2}}%
+\definecolor{ASYcolor}{gray}{0.000000}\color{ASYcolor}
+\fontsize{12.000000}{14.400000}\selectfont
+\ASYalign(77.940605,147.802188)(-1.000000,-0.500000){\texttt{n3}}%
+\definecolor{ASYcolor}{gray}{0.000000}\color{ASYcolor}
+\fontsize{12.000000}{14.400000}\selectfont
+\ASYalign(77.940605,117.689687)(-1.000000,-0.500000){\texttt{n4}}%
+\definecolor{ASYcolor}{gray}{0.000000}\color{ASYcolor}
+\fontsize{12.000000}{14.400000}\selectfont
+\ASYalign(77.940605,87.577187)(-1.000000,-0.500000){\texttt{n5}}%
+\definecolor{ASYcolor}{gray}{0.000000}\color{ASYcolor}
+\fontsize{12.000000}{14.400000}\selectfont
+\ASYalign(77.940605,57.464687)(-1.000000,-0.500000){\texttt{n6}}%
+\definecolor{ASYcolor}{gray}{0.000000}\color{ASYcolor}
+\fontsize{12.000000}{14.400000}\selectfont
+\ASYalign(77.940605,12.295937)(-1.000000,-0.273413){vertex position}%
+\end{document}
