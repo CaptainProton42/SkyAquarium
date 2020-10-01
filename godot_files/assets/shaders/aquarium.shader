@@ -8,14 +8,15 @@ uniform vec4 water_color : hint_color;
 
 uniform sampler2D worley_noise;
 
-uniform sampler2D tex;
+uniform sampler2D z_tex;
+
+uniform sampler2D vertex_position_tex;
 uniform sampler2D n1;
 uniform sampler2D n2;
 uniform sampler2D n3;
 uniform sampler2D n4;
 uniform sampler2D n5;
 uniform sampler2D n6;
-uniform sampler2D u;
 
 uniform float num_vertices = 642.0f;
 
@@ -33,23 +34,23 @@ vec4 triplanar_texture(sampler2D p_sampler, vec3 p_weights, vec3 p_triplanar_pos
 /* Return UV of neighbouring vertex. */
 vec2 getNeighbour(sampler2D n, vec2 uv) {
 	vec4 c = texture(n, uv);
-	if (c == vec4(1.0f)) {
+	if (c.a == 0.0f) {
 		return vec2(-1.0f);
 	}
 	/* idx = (c.r * 255) << 16 + (c.r * 255) << 8 + c.b * 255 */
-	float idx = c.r * 16711680.0f + c.g * 65280f + c.b * 255.0;
+	float idx = c.r * 65280f + c.g * 255.0;
 	return vec2((idx + 0.5) / num_vertices, 0.0f);
 }
 
 /* Return displacement of vertex at uv. */
 float getDisplacement(vec2 uv) {
-	vec4 c = texture(u, uv);
+	vec4 c = texture(z_tex, uv);
 	return c.r - c.g;
 }
 
 /* Return vertex position of vertex at uv. */
 vec3 getPos(vec2 uv) {
-	return texture(tex, uv).xyz * 2.0f - 1.0f;
+	return texture(vertex_position_tex, uv).xyz * 2.0f - 1.0f;
 }
 
 /* Calculate face normal from vertex positions. */
@@ -59,7 +60,7 @@ vec3 calculateFaceNormal(vec3 a, vec3 b, vec3 c) {
 	if (dot(v, n) < 0.0f) {
 		n = -n;
 	}
-	return normalize(n);
+	return n;
 }
 
 /* Calculate vertex normal as average of all adjacent face normals. */

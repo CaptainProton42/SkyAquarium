@@ -4,10 +4,10 @@ uniform float a = 0.1f;
 
 uniform vec4 click_position;
 
-uniform sampler2D tex;
+uniform sampler2D vertex_pos_tex;
 
-uniform sampler2D u;
-uniform sampler2D v;
+uniform sampler2D z_tex;
+uniform sampler2D z_old_tex;
 
 uniform sampler2D n1;
 uniform sampler2D n2;
@@ -21,17 +21,17 @@ uniform float num_vertices = 642.0f;
 /* Return UV of neighbouring vertex. */
 vec2 getNeighbour(sampler2D n, vec2 uv) {
 	vec4 c = texture(n, uv);
-	if (c == vec4(1.0f)) {
+	if (c.a == 0.0f) {
 		return vec2(-1.0f);
 	}
 	/* idx = (c.r * 255) << 16 + (c.r * 255) << 8 + c.b * 255 */
-	float idx = c.r * 16711680.0f + c.g * 65280f + c.b * 255.0;
+	float idx = c.r * 65280f + c.g * 255.0;
 	return vec2((idx + 0.5) / num_vertices, 0.0f);
 }
 
 /* Return vertex position of vertex at uv. */
 vec3 getPos(vec2 uv) {
-	return texture(tex, uv).xyz * 2.0f - 1.0f;
+	return texture(vertex_pos_tex, uv).xyz * 2.0f - 1.0f;
 }
 
 void fragment() {
@@ -43,22 +43,22 @@ void fragment() {
 	vec2 uv6 = getNeighbour(n6, UV);
 	
 	float num_n = 5.0f;
-	vec2 n_u = vec2(0.0f);
-	n_u += texture(u, uv1).rg;
-	n_u += texture(u, uv2).rg;
-	n_u += texture(u, uv3).rg;
-	n_u += texture(u, uv4).rg;
-	n_u += texture(u, uv5).rg;
+	vec2 sum_z = vec2(0.0f);
+	sum_z += texture(z_tex, uv1).rg;
+	sum_z += texture(z_tex, uv2).rg;
+	sum_z += texture(z_tex, uv3).rg;
+	sum_z += texture(z_tex, uv4).rg;
+	sum_z += texture(z_tex, uv5).rg;
 
 	if (uv6 != vec2(-1.0f)) {
-		n_u += texture(u, uv6).rg;
+		sum_z += texture(z_tex, uv6).rg;
 		num_n++;
 	}
 	
-	vec2 u_old = texture(u, UV).rg;
-	vec2 u_old_old = texture(v, UV).rg;
+	vec2 z = texture(z_tex, UV).rg;
+	vec2 z_old = texture(z_old_tex, UV).rg;
 	
-	COLOR.rg = a * n_u / num_n + (2.0f - a) * u_old - u_old_old;
+	COLOR.rg = a * sum_z / num_n + (2.0f - a) * z - z_old;
 	
 	/* Displace based on distance to mouse click. */
 	float click_dist = length(click_position.xyz - getPos(UV));

@@ -12,23 +12,18 @@ func _initialize():
 	tex.create_from_image(img)
 	tex.flags = 0
 
-	simulation_material.set_shader_param("u", tex)
-	simulation_material.set_shader_param("v", tex.duplicate())
+	simulation_material.set_shader_param("z_tex", tex)
+	simulation_material.set_shader_param("z_old_tex", tex.duplicate())
 
 func _update_map():
 	var img = get_texture().get_data()
-	simulation_material.get_shader_param("v").set_data(simulation_material.get_shader_param("u").get_data())
-	simulation_material.get_shader_param("u").set_data(img)
+	simulation_material.get_shader_param("z_old_tex").set_data(simulation_material.get_shader_param("z_tex").get_data())
+	simulation_material.get_shader_param("z_tex").set_data(img)
 
-var lock = false
 func _update():
-	if not lock:
-		lock = true
-		_update_map()
-		render_target_update_mode = UPDATE_ONCE
-		
-		yield(get_tree(), "idle_frame")
-		lock = false
+	_update_map()
+	render_target_update_mode = UPDATE_ONCE
+	yield(get_tree(), "idle_frame")
 
 func _physics_process(_delta):
 	_update()

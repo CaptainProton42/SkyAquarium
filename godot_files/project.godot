@@ -15,13 +15,18 @@ _global_script_class_icons={
 
 [application]
 
-config/name="Water Sphere"
+config/name="Sky Aquarium"
 run/main_scene="res://scenes/Main.tscn"
 config/icon="res://icon.png"
 
 [autoload]
 
 BoidHelper="*res://scripts/BoidHelper.gd"
+
+[display]
+
+window/size/width=1280
+window/size/height=720
 
 [importer_defaults]
 
